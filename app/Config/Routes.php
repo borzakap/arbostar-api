@@ -17,7 +17,7 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Test');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -35,7 +35,17 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Test::index');
+//$routes->get('twiml', 'TwiML::index');
+//$routes->post('calls-to-crm', 'CallsToCrm::index');
+//$routes->post('callcomplited', 'CallComplited::index');
+
+// get calllogs
+$routes->get('calllogs', 'GetCallLogs::index');
+// sending sms
+$routes->match(['get', 'post'], 'sms-sending', 'SmsSending::index');
+// pipedrive oauth token callback
+$routes->get('pipedrive-oauth-callback', 'PipedriveAuthCallback::index');
 
 /*
  * --------------------------------------------------------------------

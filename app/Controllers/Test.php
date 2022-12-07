@@ -2,8 +2,13 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
-{
+/**
+ * Description of Test
+ *
+ * @author alexey
+ */
+class Test extends BaseController{
+    
     public function index()
     {
         return view('welcome_message');

@@ -8,6 +8,8 @@ use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use Pipedrive;
+use Twilio;
 
 /**
  * Class BaseController
@@ -38,15 +40,31 @@ abstract class BaseController extends Controller
     protected $helpers = [];
 
     /**
+     * pipedrive instance
+     * @var type
+     */
+    protected $pipedrive;
+
+    /**
+     * Twilio instance
+     */
+    protected $twilio;
+
+    /**
      * Constructor.
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
+        
+        // pipedrive init
+        $pipdrive = config(\Config\Pipedrive::class);
+        $this->pipedrive = new Pipedrive\Client(null, null, null, $pipdrive->apiToken);
+    
+        // twilio init
+        $twilio = config(\Config\Twilio::class);
+        $this->twilio = new Twilio\Rest\Client($twilio->sid, $twilio->token);
 
-        // Preload any models, libraries, etc, here.
-
-        // E.g.: $this->session = \Config\Services::session();
     }
 }

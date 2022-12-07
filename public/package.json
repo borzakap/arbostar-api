@@ -1,0 +1,16 @@
+{
+  "name": "arbostar-api",
+  "version": "1.0.0",
+  "description": "api for arpostar twilio pipedrive integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "twilio",
+    "pipedrive",
+    "api"
+  ],
+  "author": "borzakap",
+  "license": "ISC"
+}

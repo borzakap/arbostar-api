@@ -8,7 +8,8 @@
         "php": "^7.4 || ^8.0",
         "codeigniter4/framework": "^4.0",
         "pipedrive/pipedrive": "^4.0",
-        "twilio/sdk": "^6.43"
+        "twilio/sdk": "^6.43",
+        "giggsey/libphonenumber-for-php": "^8.13"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9",

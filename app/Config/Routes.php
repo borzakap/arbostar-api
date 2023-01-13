@@ -25,7 +25,7 @@ $routes->set404Override();
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
 // Set `$autoRoutesImproved` to true in `app/Config/Feature.php` and set the following to true.
-//$routes->setAutoRoute(false);
+//$routes->setAutoRoute(true);
 
 /*
  * --------------------------------------------------------------------
@@ -41,7 +41,7 @@ $routes->get('/', 'Test::index');
 //$routes->post('callcomplited', 'CallComplited::index');
 
 // get calllogs
-$routes->get('calllogs', 'GetCallLogs::index');
+$routes->cli('calllogs', 'GetCallLogs::index');
 // sending sms
 $routes->match(['get', 'post'], 'sms-sending', 'SmsSending::index');
 // pipedrive oauth token callback

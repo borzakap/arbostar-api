@@ -25,7 +25,21 @@ class App extends BaseConfig
      * @var string
      */
     public $baseURL = 'http://arbostar-api.work/';
-
+    
+     /**
+     * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
+     * If you want to accept multiple Hostnames, set this.
+     *
+     * E.g. When your site URL ($baseURL) is 'http://example.com/', and your site
+     *      also accepts 'http://media.example.com/' and
+     *      'http://accounts.example.com/':
+     *          ['media.example.com', 'accounts.example.com']
+     *
+     * @var string[]
+     * @phpstan-var list<string>
+     */
+    public array $allowedHostnames = [];
+    
     /**
      * --------------------------------------------------------------------------
      * Index File
@@ -37,7 +51,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $indexPage = 'index.php';
+    public $indexPage = '';
 
     /**
      * --------------------------------------------------------------------------
@@ -233,6 +247,17 @@ class App extends BaseConfig
      * @var bool
      */
     public $sessionRegenerateDestroy = false;
+
+    /**
+     * --------------------------------------------------------------------------
+     * Session Database Group
+     * --------------------------------------------------------------------------
+     *
+     * DB Group for the database session.
+     *
+     * @deprecated use Config\Session::$DBGroup instead.
+     */
+    public ?string $sessionDBGroup = null;
 
     /**
      * --------------------------------------------------------------------------

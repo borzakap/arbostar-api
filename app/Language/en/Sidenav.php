@@ -5,6 +5,7 @@ return [
     'Payments' => 'Payments',
     'Contragents' => 'Contragents',
     'Currencies' => 'Currencies',
+    'Deals' => 'Deals',
     'Titles' => [
         'SiteName' => 'ArboStar Marketing',
     ],

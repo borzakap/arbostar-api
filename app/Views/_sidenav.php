@@ -7,6 +7,10 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     <?= lang('Sidenav.Reports') ?>
                 </a>
+                <a class="nav-link<?= count(array_intersect($segments, ['deals'])) >= 1 ? ' active' : ''?>" href="<?= route_to('deals_list') ?>">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    <?= lang('Sidenav.Deals') ?>
+                </a>
                 <a class="nav-link<?= count(array_intersect($segments, ['payments'])) >= 1 ? ' active' : ''?>" href="<?= route_to('payments_list') ?>">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     <?= lang('Sidenav.Payments') ?>

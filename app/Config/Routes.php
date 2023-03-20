@@ -57,6 +57,10 @@ $routes->group('/', ['namespace' => 'App\Controllers\Analytics'], function($rout
         $routes->match(['get', 'post'], 'update/(:num)', 'Payments::update/$1', ['as' => 'payments_update']);
         $routes->get('delete/(:num)', 'Payments::delete/$1', ['as' => 'payments_delete']);
     });
+    $routes->group('deals', function($routes){
+        $routes->get('', 'Deals::index', ['as' => 'deals_list']);
+    });
+    
     // log
     $routes->post('log', 'WebHook::index');
     

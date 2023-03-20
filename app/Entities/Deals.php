@@ -19,8 +19,10 @@ class Deals extends Entity
     {
         if(filter_var($referral, FILTER_VALIDATE_URL)){
             $this->attributes['referral'] = str_ireplace('www.', '', parse_url($referral, PHP_URL_HOST));
-        }else{
+        }elseif($referral){
             $this->attributes['referral'] = trim($referral);
+        }else{
+            $this->attributes['referral'] = 'null';
         }
         return $this;
     }
@@ -32,7 +34,7 @@ class Deals extends Entity
      */
     public function setUtmSource(?string $utm_source) : self
     {
-        $this->attributes['utm_source'] = ($utm_source == 'null') ? null : trim($utm_source);
+        $this->attributes['utm_source'] = !$utm_source ? 'null' : trim($utm_source);
         return $this;
     }
 
@@ -43,7 +45,7 @@ class Deals extends Entity
      */
     public function setUtmMedium(?string $utm_medium) : self
     {
-        $this->attributes['utm_medium'] = ($utm_medium == 'null') ? null : trim($utm_medium);
+        $this->attributes['utm_medium'] = !$utm_medium ? 'null' : trim($utm_medium);
         return $this;
     }
 
@@ -54,7 +56,7 @@ class Deals extends Entity
      */
     public function setUtmCampaign(?string $utm_campaign) : self
     {
-        $this->attributes['utm_campaign'] = ($utm_campaign == 'null') ? null : trim($utm_campaign);
+        $this->attributes['utm_campaign'] = !$utm_campaign ? 'null' : trim($utm_campaign);
         return $this;
     }
 
@@ -65,7 +67,7 @@ class Deals extends Entity
      */
     public function setUtmContent(?string $utm_content) : self
     {
-        $this->attributes['utm_content'] = ($utm_content == 'null') ? null : trim($utm_content);
+        $this->attributes['utm_content'] = !$utm_content ? 'null' : trim($utm_content);
         return $this;
     }
     
@@ -76,7 +78,7 @@ class Deals extends Entity
      */
     public function setUtmTerm(?string $utm_term) : self
     {
-        $this->attributes['utm_term'] = ($utm_term == 'null') ? null : trim($utm_term);
+        $this->attributes['utm_term'] = !$utm_term ? 'null' : trim($utm_term);
         return $this;
     }
 }

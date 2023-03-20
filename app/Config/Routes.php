@@ -35,7 +35,32 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Test::index');
+$routes->group('/', ['namespace' => 'App\Controllers\Analytics'], function($routes){
+    $routes->get('', 'Dashboard::index');
+    $routes->get('contragents-effectivenes', 'Dashboard::contragentsEffectivnes', ['as' => 'contragents_effectivenes']);
+    $routes->group('currencies', function($routes){
+        $routes->get('', 'Currencies::index', ['as' => 'currentcies_list']);
+        $routes->get('switch/(:num)', 'Currencies::switch/$1', ['as' => 'currentcies_switch']);
+    });
+    $routes->group('contragents', function($routes){
+        $routes->get('', 'Contragents::index', ['as' => 'contragents_list']);
+        $routes->match(['get', 'post'], 'insert', 'Contragents::insert', ['as' => 'contragents_insert']);
+        $routes->match(['get', 'post'], 'update/(:num)', 'Contragents::update/$1', ['as' => 'contragents_update']);
+    });
+    $routes->group('conditions', function($routes){
+        $routes->post('insert', 'ContragentsCondigions::insert', ['as' => 'conditions_insert']);
+        $routes->get('delete/(:num)', 'ContragentsCondigions::delete/$1', ['as' => 'conditions_delete']);
+    });
+    $routes->group('payments', function($routes){
+        $routes->get('', 'Payments::index', ['as' => 'payments_list']);
+        $routes->match(['get', 'post'], 'insert', 'Payments::insert', ['as' => 'payments_insert']);
+        $routes->match(['get', 'post'], 'update/(:num)', 'Payments::update/$1', ['as' => 'payments_update']);
+        $routes->get('delete/(:num)', 'Payments::delete/$1', ['as' => 'payments_delete']);
+    });
+    // log
+    $routes->post('log', 'WebHook::index');
+    
+});
 //$routes->get('twiml', 'TwiML::index');
 //$routes->post('calls-to-crm', 'CallsToCrm::index');
 //$routes->post('callcomplited', 'CallComplited::index');
@@ -46,6 +71,8 @@ $routes->cli('calllogs', 'GetCallLogs::index');
 $routes->match(['get', 'post'], 'sms-sending', 'SmsSending::index');
 // pipedrive oauth token callback
 $routes->get('pipedrive-oauth-callback', 'PipedriveAuthCallback::index');
+
+service('auth')->routes($routes);
 
 /*
  * --------------------------------------------------------------------

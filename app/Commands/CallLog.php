@@ -51,9 +51,12 @@ class CallLog extends BaseCommand
                 [
                     'starttimeAfter' => $after->toDateTimeString(),
                     'starttimeBefore' => $before->toDateTimeString(),
+                    'status' => ['completed','busy','no-answer','failed'],
                 ]
         );
         foreach($calls as $call){
+//            d($call->status);
+//            continue;
             $call_data = new CallLogs();
             $call_data->setFromPhoneNumber($call->from);
             $call_data->setToPhoneNumber($call->to);

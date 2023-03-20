@@ -1,0 +1,6 @@
+.languages-variants{
+    display: none;
+    &.active{
+        display: block;
+    }
+}

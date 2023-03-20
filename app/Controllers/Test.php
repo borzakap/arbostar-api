@@ -29,4 +29,9 @@ class Test extends BaseController{
         print_r($pipedrive_user);
         die();
     }
+    
+    public function log(){
+        $log = $this->request->getJSON(true);
+        log_message('info', '[hook]{hook}', ['hook' => print_r($log, true)]);
+    }
 }

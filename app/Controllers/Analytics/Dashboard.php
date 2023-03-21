@@ -16,15 +16,16 @@ class Dashboard extends BaseController
     {
         $model = new ContragentsConditionsModel();
         $data = [
-            'referral' => 'google.com',
+            'referral' => 'php.net',
             'utm_source' => 'capterra',
-            'utm_medium' => 'home',
+            'utm_medium' => 'null',
             'utm_campaign' => '',
             'utm_content' => '',
             'utm_term' => '',
             'dump' => 'clik',
         ];
         $reurn = $model->findContragent($data);
+//        dd($reurn);
         return view('dashboard/index', $data);
     }
     

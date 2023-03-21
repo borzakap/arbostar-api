@@ -34,7 +34,6 @@ class WebHook extends BaseController
             $entityDeals->stage_change_time = $deal->previous->stage_change_time;
             $modelDeals->insert($entityDeals);
         }
-        $entityDeals->id = $deal->meta->id;
         $entityDeals->referral = $deal->current->{$pipedriveConfig->fieldReferral};
         $entityDeals->utm_source = $deal->current->{$pipedriveConfig->fieldSource};
         $entityDeals->utm_medium = $deal->current->{$pipedriveConfig->fieldMedium};
@@ -46,7 +45,7 @@ class WebHook extends BaseController
         $entityDeals->stage_order_nr = $deal->current->stage_order_nr;
         $entityDeals->stage_change_time = $deal->current->stage_change_time;
         if($entityDeals->hasChanged()){
-            $modelDeals->save($entityDeals);
+            $modelDeals->update($entityDeals);
             // write the stage change table
             $entityStages = new StagesEntity();
             $entityStages->deal_id = $deal->meta->id;

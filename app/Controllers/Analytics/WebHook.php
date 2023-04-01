@@ -44,8 +44,8 @@ class WebHook extends BaseController
         $entityDeals->stage_id = $deal->current->stage_id;
         $entityDeals->stage_order_nr = $deal->current->stage_order_nr;
         $entityDeals->stage_change_time = $deal->current->stage_change_time;
+        $modelDeals->update($deal->meta->id, $entityDeals);
         if($entityDeals->hasChanged()){
-            $modelDeals->update($entityDeals);
             // write the stage change table
             $entityStages = new StagesEntity();
             $entityStages->deal_id = $deal->meta->id;

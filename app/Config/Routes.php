@@ -65,6 +65,7 @@ $routes->group('/', ['namespace' => 'App\Controllers\Analytics'], function($rout
     $routes->post('log', 'WebHook::index');
     
 });
+//$routes->post('log', 'Test::index');
 //$routes->get('twiml', 'TwiML::index');
 //$routes->post('calls-to-crm', 'CallsToCrm::index');
 //$routes->post('callcomplited', 'CallComplited::index');

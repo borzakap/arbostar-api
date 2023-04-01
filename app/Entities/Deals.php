@@ -8,8 +8,11 @@ class Deals extends Entity
 {
     protected $datamap = [];
     protected $dates   = ['added_at', 'stage_change_time', 'created_at', 'updated_at', 'deleted_at'];
-    protected $casts   = [];
-    
+    protected $casts   = [
+        'stage_id' => 'integer',
+    ];
+    protected $find_contragent_link;
+
     /**
      * get oly domains name from url
      * @param string|null $referral
@@ -81,4 +84,13 @@ class Deals extends Entity
         $this->attributes['utm_term'] = !$utm_term ? 'null' : trim($utm_term);
         return $this;
     }
+    
+    public function getFindContragentLink() : ?string
+    {
+        if(!$this->find_contragent_link){
+            $this->find_contragent_link = anchor(['deals', 'find-contragent', $this->id], '<i class="fas fa-check-circle"></i>');
+        }
+        return $this->find_contragent_link;
+    }
+    
 }

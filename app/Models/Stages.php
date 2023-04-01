@@ -15,7 +15,7 @@ class Stages extends Model
     protected $returnType       = StagesEntity::class;
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['deal_id', 'order_nr', 'name', 'stage_change_time'];
+    protected $allowedFields    = ['deal_id', 'stage_id', 'order_nr', 'name', 'stage_change_time'];
 
     // Dates
     protected $useTimestamps = true;

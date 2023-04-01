@@ -37,7 +37,7 @@ class Deals extends Model
     protected $allowCallbacks = true;
     protected $beforeInsert   = ['findContragent'];
     protected $afterInsert    = [];
-    protected $beforeUpdate   = ['findContragent'];
+    protected $beforeUpdate   = [];
     protected $afterUpdate    = [];
     protected $beforeFind     = [];
     protected $afterFind      = [];
@@ -52,15 +52,11 @@ class Deals extends Model
     protected function findContragent(?array $data) : array
     {
         // detect if insert or update
-        $inner_data = (isset($data['id'])) ? $data['data'] : $data;
         $contragentsConditionsModel = new ContragentsConditionsModel();
-        if(($contragent = $contragentsConditionsModel->findContragent($inner_data))){
-            if(isset($data['id'])){
-                $data['data']['contragent_id'] = $contragent->contragent_id;
-            }else{
-                $data['contragent_id'] = $contragent->contragent_id;
-            }
+        if(($contragent = $contragentsConditionsModel->findContragent($data['data']))){
+            $data['data']['contragent_id'] = $contragent->contragent_id;
         }
+//        log_message('info', '[hook]{hook}', ['hook' => print_r($data, true)]);
         return $data;
     }
 }

@@ -4,6 +4,7 @@ namespace App\Controllers\Analytics;
 
 use App\Controllers\Analytics\BaseController;
 use App\Models\Deals as DealsModel;
+use App\Models\ContragentsConditions as ContragentsConditionsModel;
 
 class Deals extends BaseController
 {
@@ -23,5 +24,22 @@ class Deals extends BaseController
         ];
         return view('deals/index', $data);
     }
-    
+
+    /**
+     * find contragent for deal
+     * @param int $id
+     * @return type
+     */
+    public function findContragent(int $id){
+        $model = new DealsModel();
+        $deal = $model->asArray()->find($id);
+        $contragentsConditionsModel = new ContragentsConditionsModel();
+        if(($contragent = $contragentsConditionsModel->findContragent($deal))){
+            if($model->update($id, ['contragent_id' => $contragent->contragent_id])){
+                return redirect()->back()->withInput()->with('message', lang('Messages.ContragentUpdated'));
+            }
+            return redirect()->back()->withInput()->with('errors', $model->errors());
+        }
+        return redirect()->back()->withInput()->with('message', lang('Messages.CantFindContragent'));
+    }
 }

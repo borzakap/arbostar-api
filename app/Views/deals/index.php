@@ -21,6 +21,7 @@
                         <th><?= lang('Tables.Th.Content') ?></th>
                         <th><?= lang('Tables.Th.Term') ?></th>
                         <th><?= lang('Tables.Th.Contragent') ?></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -34,6 +35,7 @@
                         <th><?= lang('Tables.Th.Content') ?></th>
                         <th><?= lang('Tables.Th.Term') ?></th>
                         <th><?= lang('Tables.Th.Contragent') ?></th>
+                        <th></th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -48,6 +50,7 @@
                             <td><?= $item->utm_content ?></td>
                             <td><?= $item->utm_term ?></td>
                             <td><?= $item->contragent ?></td>
+                            <td><?= $item->find_contragent_link ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

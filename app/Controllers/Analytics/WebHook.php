@@ -29,7 +29,7 @@ class WebHook extends BaseController
             $entityDeals->utm_term = $deal->previous->{$pipedriveConfig->fieldTerm};
             $entityDeals->status = $deal->previous->status;
             $entityDeals->added_at = $deal->previous->add_time;
-            $entityDeals->stage_id = $deal->previous->stage_id;
+            $entityDeals->stage_id = (string)$deal->previous->stage_id;
             $entityDeals->stage_order_nr = $deal->previous->stage_order_nr;
             $entityDeals->stage_change_time = $deal->previous->stage_change_time;
             $modelDeals->insert($entityDeals);
@@ -41,15 +41,15 @@ class WebHook extends BaseController
         $entityDeals->utm_content = $deal->current->{$pipedriveConfig->fieldContent};
         $entityDeals->utm_term = $deal->current->{$pipedriveConfig->fieldTerm};
         $entityDeals->status = $deal->current->status;
-        $entityDeals->stage_id = $deal->current->stage_id;
+        $entityDeals->stage_id = (string)$deal->current->stage_id;
         $entityDeals->stage_order_nr = $deal->current->stage_order_nr;
         $entityDeals->stage_change_time = $deal->current->stage_change_time;
         $modelDeals->update($deal->meta->id, $entityDeals);
-        if($entityDeals->hasChanged()){
+        if($entityDeals->hasChanged('stage_id')){
             // write the stage change table
             $entityStages = new StagesEntity();
             $entityStages->deal_id = $deal->meta->id;
-            $entityStages->stage_id = $deal->current->stage_id;
+            $entityStages->stage_id = (int)$deal->current->stage_id;
             $entityStages->name = $pipedriveConfig->stageName($deal->current->stage_id);
             $entityStages->order_nr = $deal->current->stage_order_nr;
             $entityStages->stage_change_time = $deal->current->stage_change_time;

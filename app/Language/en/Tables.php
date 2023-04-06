@@ -3,9 +3,9 @@
 return [
     'Th' => [
         'Indicator' => 'Indicator',
-        'DealsCount' => 'Number of Deals',
+        'DealsCount' => 'Number of Leads',
         'PaymentsSum' => 'Payments (USD)',
-        'DealsCost' => 'Cost of Deal (USD)',
+        'DealsCost' => 'Cost of Leads (USD)',
         'PaymentDate' => 'Date',
         'ContragentName' => 'Contragent',
         'PaymentCurrency' => 'In Original Currency',

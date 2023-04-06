@@ -65,7 +65,7 @@
                     <tr>
                         <td><?= lang('Tables.Th.DealsCost') ?></d>
                         <?php foreach ($periods as $period) : ?>
-                        <td><?= (($payments[$period->format('m-Y')] ?? 0) / ($deals[$period->format('m-Y')] ?? 1)) ?></td>
+                        <td><?= round(($payments[$period->format('m-Y')] ?? 0) / ($deals[$period->format('m-Y')] ?? 1), 2) ?></td>
                         <?php endforeach; ?>
                     </tr>
                 <?php endforeach; ?>

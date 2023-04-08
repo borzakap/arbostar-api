@@ -38,6 +38,7 @@ $routes->set404Override();
 $routes->group('/', ['namespace' => 'App\Controllers\Analytics'], function($routes){
     $routes->get('', 'Dashboard::index');
     $routes->get('contragents-effectivenes', 'Dashboard::contragentsEffectivnes', ['as' => 'contragents_effectivenes']);
+    $routes->get('stages-effectivenes', 'Dashboard::stagesEffectivenes', ['as' => 'stages_effectivenes']);
     $routes->group('currencies', function($routes){
         $routes->get('', 'Currencies::index', ['as' => 'currentcies_list']);
         $routes->get('switch/(:num)', 'Currencies::switch/$1', ['as' => 'currentcies_switch']);

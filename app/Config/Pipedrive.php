@@ -82,7 +82,7 @@ class Pipedrive extends BaseConfig{
      * Names of stages
      * @var array
      */
-    private array $stageNames = [
+    public array $stageNames = [
         1 => 'Stage.Name.Qualified',
         2 => 'Stage.Name.Invited',
         3 => 'Stage.Name.Demo',
@@ -90,6 +90,11 @@ class Pipedrive extends BaseConfig{
         5 => 'Stage.Name.Payment',
     ];
     
+    /**
+     * get stage name
+     * @param int|null $stage_id
+     * @return string
+     */
     public function stageName(?int $stage_id) : string
     {
         return $this->stageNames[$stage_id] ?? 'NoName';

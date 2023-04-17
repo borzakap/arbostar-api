@@ -33,7 +33,7 @@
                 <span><strong><?= lang('Tables.Th.AddedAt') ?></strong></span> : <span><?= $item->added_at->toDateString() ?></span>
             </div>
             <div class="col-4">
-                <span><strong><?= lang('Tables.Th.StageChangeTime') ?></strong></span> : <span><?= $item->stage_change_time->toDateString() ?></span>
+                <span><strong><?= lang('Tables.Th.StageChangeTime') ?></strong></span> : <span><?= $item->stage_change_time ? $item->stage_change_time->toDateString() : ''?></span>
             </div>
         </div>
     </div>
@@ -67,7 +67,7 @@
                             <td><?= $stage->stage_id ?></td>
                             <td><?= $stage->order_nr ?></td>
                             <td><?= $stage->name ?></td>
-                            <td><?= $item->stage_change_time->toDateString() ?></td>
+                            <td><?= $stage->stage_change_time->toDateString() ?></td>
                             <td></td>
                         </tr>
                     <?php endforeach; ?>

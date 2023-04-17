@@ -67,7 +67,7 @@
                             <td><?= $stage->stage_id ?></td>
                             <td><?= $stage->order_nr ?></td>
                             <td><?= $stage->name ?></td>
-                            <td><?= $stage->stage_change_time->toDateString() ?></td>
+                            <td><?= $stage->stage_change_time ?></td>
                             <td></td>
                         </tr>
                     <?php endforeach; ?>

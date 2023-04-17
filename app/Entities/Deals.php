@@ -3,6 +3,7 @@
 namespace App\Entities;
 
 use CodeIgniter\Entity\Entity;
+use App\Models\Stages as StagesModel;
 
 class Deals extends Entity
 {
@@ -12,6 +13,33 @@ class Deals extends Entity
         'stage_id' => 'integer',
     ];
     protected $find_contragent_link;
+    protected $stages;
+
+    /**
+     * find the stages of deal
+     * @return self
+     * @throws \RuntimeException
+     */
+    public function withStages() : self
+    {
+        if(empty($this->id)){
+            throw new \RuntimeException('Entity must be created before getting stages.');
+        }
+        if(empty($this->stages)){
+            $model = new StagesModel();
+            $this->stages = $model->where('deal_id', $this->id)->findAll();
+        }
+        return $this;
+    }
+
+    /**
+     * get the stages
+     * @return array|null
+     */
+    public function getStages() : ?array
+    {
+        return $this->stages;
+    }
 
     /**
      * get oly domains name from url

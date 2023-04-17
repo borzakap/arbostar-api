@@ -23,5 +23,11 @@ return [
         'Term' => 'Term',
         'Contragent' => 'Contragent',
         'Refferal' => 'Refferal',
+        'Status' => 'Status',
+        'StageChangeTime' => 'Stage Changed',
+        'StageId' => 'Stage Id',
+        'OrderNr' => 'Stage Order',
+        'StageName' => 'Name',
+        'CnageTime' => 'Cnage Time',
     ],
 ];

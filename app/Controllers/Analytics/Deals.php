@@ -26,6 +26,20 @@ class Deals extends BaseController
     }
 
     /**
+     * view the deal details
+     * @param int $id
+     * @return string
+     */
+    public function view(int $id) : string
+    {
+        $model = new DealsModel();
+        $data = [
+            'item' => $model->find($id)->withStages(),
+        ];
+        return view('deals/view', $data);
+    }
+
+    /**
      * find contragent for deal
      * @param int $id
      * @return type

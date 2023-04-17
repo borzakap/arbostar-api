@@ -60,6 +60,7 @@ $routes->group('/', ['namespace' => 'App\Controllers\Analytics'], function($rout
     });
     $routes->group('deals', function($routes){
         $routes->get('', 'Deals::index', ['as' => 'deals_list']);
+        $routes->get('view/(:num)', 'Deals::view/$1', ['as' => 'deals_view']);
         $routes->get('find-contragent/(:num)', 'Deals::findContragent/$1', ['as' => 'deals_find_contragent']);
     });
     

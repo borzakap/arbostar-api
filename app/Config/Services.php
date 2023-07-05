@@ -3,6 +3,7 @@
 namespace Config;
 
 use CodeIgniter\Config\BaseService;
+use App\Libraries\Billings\Base\Billings;
 
 /**
  * Services Configuration file.
@@ -19,14 +20,9 @@ use CodeIgniter\Config\BaseService;
  */
 class Services extends BaseService
 {
-    /*
-     * public static function example($getShared = true)
-     * {
-     *     if ($getShared) {
-     *         return static::getSharedInstance('example');
-     *     }
-     *
-     *     return new \CodeIgniter\Example();
-     * }
-     */
+    public static function billings(string $gateway_name) {
+        $f_gateway_name = ucfirst($gateway_name);
+        $class_name = '\App\Libraries\Billings\Gateways\\' . $f_gateway_name . '\\' . $f_gateway_name;
+        return new $class_name();
+    }
 }

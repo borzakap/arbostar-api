@@ -8,6 +8,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = {
     entry: {
         main: './src/app.js',
+        'invoices': './src/invoices.js',
         'ckeditor': './src/js/ckeditor.js',
         'geos': './src/js/geos.js'
     },

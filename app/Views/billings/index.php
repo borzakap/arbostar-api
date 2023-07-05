@@ -1,5 +1,4 @@
 <?= $this->extend('layout') ?>
-
 <?= $this->section('main') ?>
 
 <!-- DataTales Example -->
@@ -26,7 +25,9 @@
                 <tbody>
                     <?php foreach ($items as $item) : ?>
                         <tr>
-                            <td><?= $item->name ?></td>
+                            <td><?= $item->summ ?></td>
+                            <td><?= $item->currency ?></td>
+                            <td><?= $item->username ?></td>
                             <td><?= $item->update_link ?></td>
                         </tr>
                     <?php endforeach; ?>

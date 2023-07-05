@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c6e3642fcc5aecfb0e16600e3cf22b1",
+    "content-hash": "0b75ccd31a9873be22521d81f6a4a12b",
     "packages": [
         {
             "name": "apimatic/jsonmapper",
@@ -57,17 +57,60 @@
             "time": "2020-04-06T20:47:48+00:00"
         },
         {
-            "name": "codeigniter4/framework",
-            "version": "v4.3.2",
+            "name": "authorizenet/authorizenet",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/codeigniter4/framework.git",
-                "reference": "e91e4fa20bb4440bf21513fe9b702db2269ca921"
+                "url": "https://github.com/AuthorizeNet/sdk-php.git",
+                "reference": "a3e76f96f674d16e892f87c58bedb99dada4b067"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeigniter4/framework/zipball/e91e4fa20bb4440bf21513fe9b702db2269ca921",
-                "reference": "e91e4fa20bb4440bf21513fe9b702db2269ca921",
+                "url": "https://api.github.com/repos/AuthorizeNet/sdk-php/zipball/a3e76f96f674d16e892f87c58bedb99dada4b067",
+                "reference": "a3e76f96f674d16e892f87c58bedb99dada4b067",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "description": "Official PHP SDK for Authorize.Net",
+            "homepage": "http://developer.authorize.net",
+            "keywords": [
+                "authorize.net",
+                "authorizenet",
+                "ecommerce",
+                "payment"
+            ],
+            "support": {
+                "issues": "https://github.com/AuthorizeNet/sdk-php/issues",
+                "source": "https://github.com/AuthorizeNet/sdk-php/tree/2.0.2"
+            },
+            "time": "2021-03-31T18:22:14+00:00"
+        },
+        {
+            "name": "codeigniter4/framework",
+            "version": "v4.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeigniter4/framework.git",
+                "reference": "b41bca4ff6efd9baffdb7a1bba33f946fb8580d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codeigniter4/framework/zipball/b41bca4ff6efd9baffdb7a1bba33f946fb8580d9",
+                "reference": "b41bca4ff6efd9baffdb7a1bba33f946fb8580d9",
                 "shasum": ""
             },
             "require": {
@@ -82,7 +125,7 @@
                 "codeigniter/coding-standard": "^1.5",
                 "fakerphp/faker": "^1.9",
                 "friendsofphp/php-cs-fixer": "3.13.0",
-                "kint-php/kint": "^5.0.3",
+                "kint-php/kint": "^5.0.4",
                 "mikey179/vfsstream": "^1.6",
                 "nexusphp/cs-config": "^3.6",
                 "phpunit/phpunit": "^9.1",
@@ -128,36 +171,29 @@
                 "slack": "https://codeigniterchat.slack.com",
                 "source": "https://github.com/codeigniter4/CodeIgniter4"
             },
-            "time": "2023-02-18T10:37:34+00:00"
+            "time": "2023-05-21T13:41:12+00:00"
         },
         {
             "name": "codeigniter4/settings",
-            "version": "v2.1.0",
+            "version": "v2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeigniter4/settings.git",
-                "reference": "0c3fbd5a474eeb592bef5550be2a6d2f73a8a09d"
+                "reference": "854224baa190723f5f22d9dcc32cdb37aeaf79cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeigniter4/settings/zipball/0c3fbd5a474eeb592bef5550be2a6d2f73a8a09d",
-                "reference": "0c3fbd5a474eeb592bef5550be2a6d2f73a8a09d",
+                "url": "https://api.github.com/repos/codeigniter4/settings/zipball/854224baa190723f5f22d9dcc32cdb37aeaf79cd",
+                "reference": "854224baa190723f5f22d9dcc32cdb37aeaf79cd",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.3 || ^8.0"
+                "php": "^7.4 || ^8.0"
             },
             "require-dev": {
-                "codeigniter/coding-standard": "^1.1",
-                "codeigniter4/codeigniter4": "dev-develop",
-                "fakerphp/faker": "^1.9",
-                "mockery/mockery": "^1.0",
-                "nexusphp/cs-config": "^3.1",
-                "nexusphp/tachycardia": "^1.0",
-                "php-coveralls/php-coveralls": "^2.4",
-                "phpstan/phpstan": "^1.0",
-                "phpunit/phpunit": "^9.0",
-                "squizlabs/php_codesniffer": "^3.3"
+                "codeigniter4/devkit": "^1.0",
+                "codeigniter4/framework": "^4.2.3",
+                "rector/rector": "0.16.0"
             },
             "type": "library",
             "autoload": {
@@ -188,9 +224,9 @@
             ],
             "support": {
                 "issues": "https://github.com/codeigniter4/settings/issues",
-                "source": "https://github.com/codeigniter4/settings/tree/v2.1.0"
+                "source": "https://github.com/codeigniter4/settings/tree/v2.1.2"
             },
-            "time": "2021-11-22T17:30:18+00:00"
+            "time": "2023-06-02T07:15:16+00:00"
         },
         {
             "name": "codeigniter4/shield",
@@ -198,12 +234,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/codeigniter4/shield.git",
-                "reference": "6413513444878960237a9c97d02c8dd01326fa48"
+                "reference": "7c073266cf3c59a2b62ad946773e85dd0f89447f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codeigniter4/shield/zipball/6413513444878960237a9c97d02c8dd01326fa48",
-                "reference": "6413513444878960237a9c97d02c8dd01326fa48",
+                "url": "https://api.github.com/repos/codeigniter4/shield/zipball/7c073266cf3c59a2b62ad946773e85dd0f89447f",
+                "reference": "7c073266cf3c59a2b62ad946773e85dd0f89447f",
                 "shasum": ""
             },
             "require": {
@@ -216,11 +252,13 @@
             "require-dev": {
                 "codeigniter4/devkit": "^1.0",
                 "codeigniter4/framework": "^4.2.7",
+                "firebase/php-jwt": "^6.4",
                 "mikey179/vfsstream": "^1.6.7",
                 "mockery/mockery": "^1.0"
             },
             "suggest": {
-                "ext-curl": "Required to use the password validation rule via PwnedValidator class."
+                "ext-curl": "Required to use the password validation rule via PwnedValidator class.",
+                "ext-openssl": "Required to use the JWT Authenticator."
             },
             "default-branch": true,
             "type": "library",
@@ -262,20 +300,20 @@
                 "slack": "https://codeigniterchat.slack.com",
                 "source": "https://github.com/codeigniter4/shield"
             },
-            "time": "2023-03-18T08:42:05+00:00"
+            "time": "2023-05-23T22:57:54+00:00"
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.13.7",
+            "version": "8.13.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "281b12d9091fcd04e9379a67f723179c44b13ec8"
+                "reference": "a8996558d694b1437678d27de80e37620367b8de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/281b12d9091fcd04e9379a67f723179c44b13ec8",
-                "reference": "281b12d9091fcd04e9379a67f723179c44b13ec8",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/a8996558d694b1437678d27de80e37620367b8de",
+                "reference": "a8996558d694b1437678d27de80e37620367b8de",
                 "shasum": ""
             },
             "require": {
@@ -334,20 +372,20 @@
                 "issues": "https://github.com/giggsey/libphonenumber-for-php/issues",
                 "source": "https://github.com/giggsey/libphonenumber-for-php"
             },
-            "time": "2023-03-03T14:16:43+00:00"
+            "time": "2023-06-05T07:39:05+00:00"
         },
         {
             "name": "giggsey/locale",
-            "version": "2.3",
+            "version": "2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/Locale.git",
-                "reference": "5f035523740be40d40ac768a123c9bcc1ae12f56"
+                "reference": "a6b33dfc9e8949b7e28133c4628b29cd9f1850bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/Locale/zipball/5f035523740be40d40ac768a123c9bcc1ae12f56",
-                "reference": "5f035523740be40d40ac768a123c9bcc1ae12f56",
+                "url": "https://api.github.com/repos/giggsey/Locale/zipball/a6b33dfc9e8949b7e28133c4628b29cd9f1850bb",
+                "reference": "a6b33dfc9e8949b7e28133c4628b29cd9f1850bb",
                 "shasum": ""
             },
             "require": {
@@ -386,9 +424,9 @@
             "description": "Locale functions required by libphonenumber-for-php",
             "support": {
                 "issues": "https://github.com/giggsey/Locale/issues",
-                "source": "https://github.com/giggsey/Locale/tree/2.3"
+                "source": "https://github.com/giggsey/Locale/tree/2.4"
             },
-            "time": "2022-10-19T20:03:30+00:00"
+            "time": "2023-04-13T07:40:58+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
@@ -505,16 +543,16 @@
         },
         {
             "name": "pipedrive/pipedrive",
-            "version": "4.0.5",
+            "version": "4.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pipedrive/client-php.git",
-                "reference": "1c5c766c8d84112196d9d1d082516b5d564e4555"
+                "reference": "82bffda0401ccd7211edfea15f313246f15fde1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pipedrive/client-php/zipball/1c5c766c8d84112196d9d1d082516b5d564e4555",
-                "reference": "1c5c766c8d84112196d9d1d082516b5d564e4555",
+                "url": "https://api.github.com/repos/pipedrive/client-php/zipball/82bffda0401ccd7211edfea15f313246f15fde1d",
+                "reference": "82bffda0401ccd7211edfea15f313246f15fde1d",
                 "shasum": ""
             },
             "require": {
@@ -553,9 +591,9 @@
             ],
             "support": {
                 "issues": "https://github.com/pipedrive/client-php/issues",
-                "source": "https://github.com/pipedrive/client-php/tree/4.0.5"
+                "source": "https://github.com/pipedrive/client-php/tree/4.0.10"
             },
-            "time": "2022-11-15T11:34:24+00:00"
+            "time": "2023-05-08T06:22:42+00:00"
         },
         {
             "name": "psr/log",
@@ -813,16 +851,16 @@
         },
         {
             "name": "fakerphp/faker",
-            "version": "v1.21.0",
+            "version": "v1.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FakerPHP/Faker.git",
-                "reference": "92efad6a967f0b79c499705c69b662f738cc9e4d"
+                "reference": "f85772abd508bd04e20bb4b1bbe260a68d0066d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/92efad6a967f0b79c499705c69b662f738cc9e4d",
-                "reference": "92efad6a967f0b79c499705c69b662f738cc9e4d",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/f85772abd508bd04e20bb4b1bbe260a68d0066d2",
+                "reference": "f85772abd508bd04e20bb4b1bbe260a68d0066d2",
                 "shasum": ""
             },
             "require": {
@@ -875,9 +913,9 @@
             ],
             "support": {
                 "issues": "https://github.com/FakerPHP/Faker/issues",
-                "source": "https://github.com/FakerPHP/Faker/tree/v1.21.0"
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.22.0"
             },
-            "time": "2022-12-13T13:54:32+00:00"
+            "time": "2023-05-14T12:31:37+00:00"
         },
         {
             "name": "mikey179/vfsstream",
@@ -991,16 +1029,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.15.4",
+            "version": "v4.15.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "6bb5176bc4af8bcb7d926f88718db9b96a2d4290"
+                "reference": "11e2663a5bc9db5d714eedb4277ee300403b4a9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/6bb5176bc4af8bcb7d926f88718db9b96a2d4290",
-                "reference": "6bb5176bc4af8bcb7d926f88718db9b96a2d4290",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/11e2663a5bc9db5d714eedb4277ee300403b4a9e",
+                "reference": "11e2663a5bc9db5d714eedb4277ee300403b4a9e",
                 "shasum": ""
             },
             "require": {
@@ -1041,9 +1079,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.4"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.5"
             },
-            "time": "2023-03-05T19:49:14+00:00"
+            "time": "2023-05-19T20:20:00+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -1476,16 +1514,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.5",
+            "version": "9.6.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "86e761949019ae83f49240b2f2123fb5ab3b2fc5"
+                "reference": "17d621b3aff84d0c8b62539e269e87d8d5baa76e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/86e761949019ae83f49240b2f2123fb5ab3b2fc5",
-                "reference": "86e761949019ae83f49240b2f2123fb5ab3b2fc5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/17d621b3aff84d0c8b62539e269e87d8d5baa76e",
+                "reference": "17d621b3aff84d0c8b62539e269e87d8d5baa76e",
                 "shasum": ""
             },
             "require": {
@@ -1558,7 +1596,8 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.5"
+                "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.8"
             },
             "funding": [
                 {
@@ -1574,7 +1613,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-03-09T06:34:10+00:00"
+            "time": "2023-05-11T05:14:45+00:00"
         },
         {
             "name": "psr/container",
@@ -1929,16 +1968,16 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "4.0.4",
+            "version": "4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "3461e3fccc7cfdfc2720be910d3bd73c69be590d"
+                "reference": "74be17022044ebaaecfdf0c5cd504fc9cd5a7131"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/3461e3fccc7cfdfc2720be910d3bd73c69be590d",
-                "reference": "3461e3fccc7cfdfc2720be910d3bd73c69be590d",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/74be17022044ebaaecfdf0c5cd504fc9cd5a7131",
+                "reference": "74be17022044ebaaecfdf0c5cd504fc9cd5a7131",
                 "shasum": ""
             },
             "require": {
@@ -1983,7 +2022,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/diff/issues",
-                "source": "https://github.com/sebastianbergmann/diff/tree/4.0.4"
+                "source": "https://github.com/sebastianbergmann/diff/tree/4.0.5"
             },
             "funding": [
                 {
@@ -1991,7 +2030,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-26T13:10:38+00:00"
+            "time": "2023-05-07T05:35:17+00:00"
         },
         {
             "name": "sebastian/environment",
@@ -2595,16 +2634,16 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v3.2.1",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "e2d1534420bd723d0ef5aec58a22c5fe60ce6f5e"
+                "reference": "7c3aff79d10325257a001fcf92d991f24fc967cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/e2d1534420bd723d0ef5aec58a22c5fe60ce6f5e",
-                "reference": "e2d1534420bd723d0ef5aec58a22c5fe60ce6f5e",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/7c3aff79d10325257a001fcf92d991f24fc967cf",
+                "reference": "7c3aff79d10325257a001fcf92d991f24fc967cf",
                 "shasum": ""
             },
             "require": {
@@ -2613,7 +2652,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "3.3-dev"
+                    "dev-main": "3.4-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -2642,7 +2681,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.2.1"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.3.0"
             },
             "funding": [
                 {
@@ -2658,7 +2697,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-03-01T10:25:55+00:00"
+            "time": "2023-05-23T14:45:45+00:00"
         },
         {
             "name": "theseer/tokenizer",

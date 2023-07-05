@@ -63,11 +63,26 @@ $routes->group('/', ['namespace' => 'App\Controllers\Analytics'], function($rout
         $routes->get('view/(:num)', 'Deals::view/$1', ['as' => 'deals_view']);
         $routes->get('find-contragent/(:num)', 'Deals::findContragent/$1', ['as' => 'deals_find_contragent']);
     });
-    
+    $routes->group('stages', function($routes){
+        $routes->get('delete/(:num)', 'Stages::delete/$1', ['as' => 'stages_delete']);
+    });
     // log
     $routes->post('log', 'WebHook::index');
-    
 });
+// invoices
+$routes->group('invoices', ['namespace' => 'App\Controllers\Billings'], function ($routes) {
+    $routes->get('show/(:segment)', 'Invoices::show/$1', ['as' => 'invoices_show']);
+    $routes->post('show/form', 'Invoices::form', ['as' => 'invoices_form']);
+    $routes->post('pay', 'Invoices::pay', ['as' => 'invoices_pay']);
+});
+// billings
+$routes->group('billings', ['namespace' => 'App\Controllers\Billings'], function ($routes) {
+    $routes->get('', 'Billings::index', ['as' => 'billings_list']);
+    $routes->get('new', 'Billings::new', ['as' => 'billings_new']);
+    $routes->get('view/(:num)', 'Billings::view/$1', ['as' => 'billings_view']);
+    $routes->post('create', 'Billings::create', ['as' => 'billings_create']);
+});
+
 //$routes->post('log', 'Test::index');
 //$routes->get('twiml', 'TwiML::index');
 //$routes->post('calls-to-crm', 'CallsToCrm::index');

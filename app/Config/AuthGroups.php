@@ -47,8 +47,8 @@ class AuthGroups extends ShieldAuthGroups
             'title'       => 'User',
             'description' => 'General users of the site. Often customers.',
         ],
-        'beta' => [
-            'title'       => 'Beta User',
+        'client' => [
+            'title'       => 'Clients',
             'description' => 'Has access to beta-level features.',
         ],
     ];
@@ -69,7 +69,7 @@ class AuthGroups extends ShieldAuthGroups
         'users.create'        => 'Can create new non-admin users',
         'users.edit'          => 'Can edit existing non-admin users',
         'users.delete'        => 'Can delete existing non-admin users',
-        'beta.access'         => 'Can access beta-level features',
+        'clients.access'      => 'Can access client-level features',
     ];
 
     /**
@@ -82,25 +82,25 @@ class AuthGroups extends ShieldAuthGroups
         'superadmin' => [
             'admin.*',
             'users.*',
-            'beta.*',
+            'client.*',
         ],
         'admin' => [
             'admin.access',
             'users.create',
             'users.edit',
             'users.delete',
-            'beta.access',
+            'client.access',
         ],
         'developer' => [
             'admin.access',
             'admin.settings',
             'users.create',
             'users.edit',
-            'beta.access',
+            'client.access',
         ],
         'user' => [],
         'beta' => [
-            'beta.access',
+            'client.access',
         ],
     ];
 }

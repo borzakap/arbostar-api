@@ -29,7 +29,7 @@ class Filters extends BaseConfig
      */
     public array $globals = [
         'before' => [
-            'session' => ['except' => ['login*', 'sms-sending*', 'pipedrive-oauth-callback*', 'log*']],
+            'session' => ['except' => ['login*', 'sms-sending*', 'pipedrive-oauth-callback*', 'log*', 'invoices/show/*', 'invoices/pay']],
         ],
         'after' => [
             'toolbar',

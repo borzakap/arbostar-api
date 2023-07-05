@@ -10,7 +10,8 @@
         "pipedrive/pipedrive": "^4.0",
         "twilio/sdk": "^6.43",
         "giggsey/libphonenumber-for-php": "^8.13",
-        "codeigniter4/shield": "dev-develop"
+        "codeigniter4/shield": "dev-develop",
+        "authorizenet/authorizenet": "2.0.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9",
